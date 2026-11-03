@@ -1,0 +1,13 @@
+Restaurant Order Management System
+
+Database Design
+
+The database named restaurant_db is designed to manage and maintain the day-to-day operations of a restaurant efficiently. It consists of seven major tables: Customers, Employees, Categories, Menu_Items, Orders, Order_Items, and Payments. Each table is designed with appropriate columns, data types, primary keys, and foreign keys to ensure data accuracy, consistency, and integrity. The database helps organize restaurant-related information and simplifies the process of managing customers, employees, food items, orders, and payments.
+
+The Customers table stores essential customer information, such as customer ID, name, contact number, email address, and address. It helps the restaurant maintain customer records and identify customers who place orders. The Employees table maintains staff details, including employee ID, employee name, job role, contact information, salary, and other employment-related details. This table helps manage employee information and track the staff working in the restaurant.
+
+The Categories table is used to organize food items into different groups, such as starters, main courses, desserts, beverages, and snacks. Each category is assigned a unique category ID, which helps classify menu items systematically. The Menu_Items table stores information about the food and beverages available in the restaurant. It includes details such as item ID, item name, category ID, description, price, and availability status. The relationship between Categories and Menu_Items ensures that each food item can be associated with its respective category.
+
+The Orders table maintains information about customer orders, including order ID, customer ID, employee ID, order date, order time, and total amount. It helps the restaurant track orders placed by customers and identify the employees responsible for handling them. The Order_Items table stores the individual food items included in each order, along with their quantities and prices. This table plays an important role in maintaining the relationship between Orders and Menu_Items. It allows a single order to contain multiple food items and helps calculate the total cost of each order.
+
+The Payments table maintains payment-related information, such as payment ID, order ID, payment date, payment amount, payment method, and payment status. It helps track whether an order has been paid for and records the method used for payment, such as cash, credit card, debit card, or online payment. This table also supports better financial tracking and reduces errors in payment management.

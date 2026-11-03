@@ -1,0 +1,62 @@
+ER Diagram
+
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : places
+    EMPLOYEES ||--o{ ORDERS : manages
+    CATEGORIES ||--o{ MENU_ITEMS : contains
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    MENU_ITEMS ||--o{ ORDER_ITEMS : included_in
+    ORDERS ||--o{ PAYMENTS : has
+
+    CUSTOMERS {
+        INT customer_id PK
+        VARCHAR customer_name
+        VARCHAR phone
+        VARCHAR email
+        VARCHAR address
+    }
+
+    EMPLOYEES {
+        INT employee_id PK
+        VARCHAR employee_name
+        VARCHAR role
+        DECIMAL salary
+    }
+
+    CATEGORIES {
+        INT category_id PK
+        VARCHAR category_name
+    }
+
+    MENU_ITEMS {
+        INT item_id PK
+        INT category_id FK
+        VARCHAR item_name
+        DECIMAL price
+    }
+
+    ORDERS {
+        INT order_id PK
+        INT customer_id FK
+        INT employee_id FK
+        DATETIME order_date
+        VARCHAR order_status
+        DECIMAL total_amount
+    }
+
+    ORDER_ITEMS {
+        INT order_item_id PK
+        INT order_id FK
+        INT item_id FK
+        INT quantity
+        DECIMAL unit_price
+        DECIMAL subtotal
+    }
+
+    PAYMENTS {
+        INT payment_id PK
+        INT order_id FK
+        DECIMAL amount
+        VARCHAR payment_method
+        VARCHAR payment_status
+    }
